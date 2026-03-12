@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Registro</title>
+
+<style>
+
+body{
+background:#0f0f0f;
+font-family:Arial;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:#1c1c1c;
+padding:40px;
+border-radius:10px;
+width:300px;
+text-align:center;
+color:white;
+}
+
+input{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:none;
+border-radius:5px;
+}
+
+button{
+width:100%;
+padding:12px;
+background:#ff004f;
+border:none;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+a{
+color:#00aaff;
+text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<h2>Registrarse</h2>
+
+<form action="registro.php" method="POST">
+
+<input type="email" name="correo" placeholder="Correo" required>
+
+<input type="password" name="password" placeholder="Contraseña" required>
+
+<button type="submit">Crear cuenta</button>
+
+<p>¿Ya tienes cuenta?</p>
+<a href="index.html">Iniciar sesión</a>
+
+</form>
+
+</div>
+
+</body>
+</html>
