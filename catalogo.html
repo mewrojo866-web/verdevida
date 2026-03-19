@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Verde Vida | Invernadero Profesional</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="top-bar" id="topBar">
+    <p>🌿 ¡Envíos gratis en tu primera compra usando el código <b>PRIMAVERA</b>! 🌿</p>
+    <span class="close-btn" onclick="document.getElementById('topBar').style.display='none'">×</span>
+</div>
+
+
+
+<header>
+    <div class="container header-flex">
+        <div class="logo">
+            <i class="fas fa-leaf"></i> <span>Verde Vida</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+            <li><a href="acercade.html">Acerca de</a></li>
+            <li><a href="#">Catálogo</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <section id="container section-padding">
+    <div class="text-center">
+        <h1 class="section-title">Nuestro Catálogo Completo</h1>
+        <p>Selecciona una categoría para explorar nuestras variedades:</p>
+    </div>
+
+    <div id="controles-catalogo" class="filter-buttons">
+        <button class="btn-filter" onclick="filtrar('aromaticas')">🌿 Aromáticas</button>
+        <button class="btn-filter" onclick="filtrar('ornamentales')">🌸 Ornamentales</button>
+        <button class="btn-filter" onclick="filtrar('hortalizas')">🥕 Hortalizas</button>
+        <button class="btn-filter" onclick="filtrar('frutales')">🍎 Frutales</button>
+        <button class="btn-filter btn-all" onclick="filtrar('todos')">Ver Todo</button>
+    </div>
+
+    </main>
+
+<section id="aromaticas" class="seccion-catalogo">
+    <h2>🌿 Plantas Aromáticas</h2>
+    
+    <div class="products-grid">
+        
+
+<div class="planta"><img src="aromaticas/alba.jpeg"><h3>Albahaca</h3><p>Aromática culinaria.</p><p>Medidas: 20–40 cm</p><p>Precio: $60</p><button onclick="agregarCarrito('Albahaca',60)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/romero.jpeg"><h3>Romero</h3><p>Uso medicinal.</p><p>Medidas: 30–60 cm</p><p>Precio: $70</p><button onclick="agregarCarrito('Romero',70)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/menta.jpeg"><h3>Menta</h3><p>Aroma refrescante.</p><p>Medidas: 20–50 cm</p><p>Precio: $55</p><button onclick="agregarCarrito('Menta',55)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/hieva.jpeg"><h3>Hierbabuena</h3><p>Culinaria.</p><p>Medidas: 25–45 cm</p><p>Precio: $55</p><button onclick="agregarCarrito('Hierbabuena',55)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/tomillo.jpeg"><h3>Tomillo</h3><p>Aromática intensa.</p><p>Medidas: 15–30 cm</p><p>Precio: $60</p><button onclick="agregarCarrito('Tomillo',60)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/oregano.jpeg"><h3>Orégano</h3><p>Condimento.</p><p>Medidas: 30–60 cm</p><p>Precio: $65</p><button onclick="agregarCarrito('Orégano',65)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/laurel.jpeg"><h3>Laurel</h3><p>Aromática perenne.</p><p>Medidas: 50–100 cm</p><p>Precio: $90</p><button onclick="agregarCarrito('Laurel',90)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/salvia.jpeg"><h3>Salvia</h3><p>Medicinal.</p><p>Medidas: 40–70 cm</p><p>Precio: $75</p><button onclick="agregarCarrito('Salvia',75)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/eneldo.jpeg"><h3>Eneldo</h3><p>Aromática suave.</p><p>Medidas: 30–50 cm</p><p>Precio: $60</p><button onclick="agregarCarrito('Eneldo',60)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/anis.jpeg"><h3>Anís</h3><p>Aromática dulce.</p><p>Medidas: 40–60 cm</p><p>Precio: $65</p><button onclick="agregarCarrito('Anís',65)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/cilantro.jpeg"><h3>Cilantro</h3><p>Culinaria.</p><p>Medidas: 20–40 cm</p><p>Precio: $45</p><button onclick="agregarCarrito('Cilantro',45)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/perejil.jpeg"><h3>Perejil</h3><p>Aromática común.</p><p>Medidas: 20–35 cm</p><p>Precio: $45</p><button onclick="agregarCarrito('Perejil',45)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/cebollin.jpeg"><h3>Cebollín</h3><p>Sabor suave.</p><p>Medidas: 30–45 cm</p><p>Precio: $50</p><button onclick="agregarCarrito('Cebollín',50)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/alcaravea.jpeg"><h3>Alcaravea</h3><p>Aromática europea.</p><p>Medidas: 30–60 cm</p><p>Precio: $70</p><button onclick="agregarCarrito('Alcaravea',70)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/estragon.jpeg"><h3>Estragón</h3><p>Aroma anisado.</p><p>Medidas: 40–80 cm</p><p>Precio: $80</p><button onclick="agregarCarrito('Estragón',80)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/hinojo.jpeg"><h3>Hinojo</h3><p>Aromática digestiva.</p><p>Medidas: 60–120 cm</p><p>Precio: $85</p><button onclick="agregarCarrito('Hinojo',85)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/troronjil.jpeg"><h3>Toronjil</h3><p>Relajante.</p><p>Medidas: 30–60 cm</p><p>Precio: $65</p><button onclick="agregarCarrito('Toronjil',65)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/cedron.jpeg"><h3>Cedrón</h3><p>Aroma cítrico.</p><p>Medidas: 50–120 cm</p><p>Precio: $90</p><button onclick="agregarCarrito('Cedrón',90)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/ajenjo.jpeg"><h3>Ajenjo</h3><p>Medicinal.</p><p>Medidas: 60–100 cm</p><p>Precio: $85</p><button onclick="agregarCarrito('Ajenjo',85)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/mejora.jpeg"><h3>Mejorana</h3><p>Aromática suave.</p><p>Medidas: 20–40 cm</p><p>Precio: $60</p><button onclick="agregarCarrito('Mejorana',60)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/ruda.jpeg"><h3>Ruda</h3><p>Medicinal.</p><p>Medidas: 50–80 cm</p><p>Precio: $75</p><button onclick="agregarCarrito('Ruda',75)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/lavanda.jpeg"><h3>Lavanda</h3><p>Aromática floral.</p><p>Medidas: 40–80 cm</p><p>Precio: $95</p><button onclick="agregarCarrito('Lavanda',95)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/manzanilla.jpeg"><h3>Manzanilla</h3><p>Relajante.</p><p>Medidas: 20–40 cm</p><p>Precio: $50</p><button onclick="agregarCarrito('Manzanilla',50)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/epaazote.jpeg"><h3>Epazote</h3><p>Culinaria mexicana.</p><p>Medidas: 40–70 cm</p><p>Precio: $55</p><button onclick="agregarCarrito('Epazote',55)">Agregar</button></div>
+</section>
+
+<!-- ORNAMENTALES -->
+<section id="ornamentales" class="seccion-catalogo ">
+        <h2 class="titulo-categoria">🌸 Plantas Ornamentales</h2>
+        <div class="products-grid">
+    
+
+<div class="planta"><img src="ornamentales/rosa.jpeg"><h3>Rosa</h3><p>Flor decorativa.</p><p>Medidas: 40–60 cm</p><p>Precio: $120</p><button onclick="agregarCarrito('Rosa',120)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/orquidea.jpeg"><h3>Orquídea</h3><p>Flor exótica.</p><p>Medidas: 30–50 cm</p><p>Precio: $250</p><button onclick="agregarCarrito('Orquídea',250)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/tulipan.jpeg"><h3>Tulipán</h3><p>Flor elegante.</p><p>Medidas: 30–45 cm</p><p>Precio: $110</p><button onclick="agregarCarrito('Tulipán',110)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/girasol.jpeg"><h3>Girasol</h3><p>Flor grande.</p><p>Medidas: 120–200 cm</p><p>Precio: $90</p><button onclick="agregarCarrito('Girasol',90)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/lirio.jpeg"><h3>Lirio</h3><p>Flor aromática.</p><p>Medidas: 60–100 cm</p><p>Precio: $130</p><button onclick="agregarCarrito('Lirio',130)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/clavel.jpeg"><h3>Clavel</h3><p>Flor colorida.</p><p>Medidas: 30–50 cm</p><p>Precio: $85</p><button onclick="agregarCarrito('Clavel',85)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/margarita.jpeg"><h3>Margarita</h3><p>Flor sencilla.</p><p>Medidas: 25–40 cm</p><p>Precio: $75</p><button onclick="agregarCarrito('Margarita',75)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/dalia.jpeg"><h3>Dalia</h3><p>Flor mexicana.</p><p>Medidas: 50–120 cm</p><p>Precio: $140</p><button onclick="agregarCarrito('Dalia',140)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/begonia.jpeg"><h3>Begonia</h3><p>Flor ornamental.</p><p>Medidas: 30–45 cm</p><p>Precio: $95</p><button onclick="agregarCarrito('Begonia',95)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/azalea.jpeg"><h3>Azalea</h3><p>Flor arbustiva.</p><p>Medidas: 50–100 cm</p><p>Precio: $160</p><button onclick="agregarCarrito('Azalea',160)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/geranio.jpeg"><h3>Geranio</h3><p>Flor resistente.</p><p>Medidas: 30–60 cm</p><p>Precio: $80</p><button onclick="agregarCarrito('Geranio',80)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/petunia.jpeg"><h3>Petunia</h3><p>Flor colgante.</p><p>Medidas: 20–40 cm</p><p>Precio: $70</p><button onclick="agregarCarrito('Petunia',70)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/Hortensia.jpeg"><h3>Hortensia</h3><p>Flor abundante.</p><p>Medidas: 80–150 cm</p><p>Precio: $180</p><button onclick="agregarCarrito('Hortensia',180)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/crisantemo.jpeg"><h3>Crisantemo</h3><p>Flor duradera.</p><p>Medidas: 40–80 cm</p><p>Precio: $100</p><button onclick="agregarCarrito('Crisantemo',100)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/jazmin.jpeg"><h3>Jazmín</h3><p>Flor aromática.</p><p>Medidas: 100–200 cm</p><p>Precio: $150</p><button onclick="agregarCarrito('Jazmín',150)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/camelia.jpeg"><h3>Camelia</h3><p>Flor ornamental.</p><p>Medidas: 80–150 cm</p><p>Precio: $170</p><button onclick="agregarCarrito('Camelia',170)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/anturio.jpeg"><h3>Anturio</h3><p>Flor tropical.</p><p>Medidas: 40–60 cm</p><p>Precio: $160</p><button onclick="agregarCarrito('Anturio',160)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/hibisco.jpeg"><h3>Hibisco</h3><p>Flor grande.</p><p>Medidas: 100–200 cm</p><p>Precio: $140</p><button onclick="agregarCarrito('Hibisco',140)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/cala.jpeg"><h3>Cala</h3><p>Flor elegante.</p><p>Medidas: 50–80 cm</p><p>Precio: $130</p><button onclick="agregarCarrito('Cala',130)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/buganbiliia.jpeg"><h3>Bugambilia</h3><p>Flor trepadora.</p><p>Medidas: 200–500 cm</p><p>Precio: $200</p><button onclick="agregarCarrito('Bugambilia',200)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/cosmo.jpeg"><h3>Cosmos</h3><p>Flor silvestre.</p><p>Medidas: 60–120 cm</p><p>Precio: $85</p><button onclick="agregarCarrito('Cosmos',85)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/ciclamen.jpeg"><h3>Ciclamen</h3><p>Flor ornamental.</p><p>Medidas: 30–40 cm</p><p>Precio: $110</p><button onclick="agregarCarrito('Ciclamen',110)">Agregar</button></div>
+
+<div class="planta"><img src="aromaticas/lavanda.jpeg"><h3>Lavanda</h3><p>Flor aromática.</p><p>Medidas: 40–80 cm</p><p>Precio: $120</p><button onclick="agregarCarrito('Lavanda',120)">Agregar</button></div>
+
+<div class="planta"><img src="ornamentales/campanula.jpeg"><h3>Campánula</h3><p>Flor ornamental.</p><p>Medidas: 20–40 cm</p><p>Precio: $90</p><button onclick="agregarCarrito('Campánula',90)">Agregar</button></div>
+</section>
+
+<!-- HORTALIZAS -->
+<section id="hortalizas" class="seccion-catalogo ">
+        <h2 class="titulo-categoria">🥕 Hortalizas</h2>
+        <div class="products-grid">
+            
+<div class="planta"><img src="hortalizas/lechuga.jpeg"><h3>Lechuga</h3><p>Hortaliza fresca.</p><p>Medidas: 25–35 cm</p><p>Precio: $40</p><button onclick="agregarCarrito('Lechuga',40)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/tomate.jpeg"><h3>Tomate</h3><p>Hortaliza roja.</p><p>Medidas: 50–100 cm</p><p>Precio: $90</p><button onclick="agregarCarrito('Tomate',90)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/pepino.jpeg"><h3>Pepino</h3><p>Hortaliza verde.</p><p>Medidas: 80–150 cm</p><p>Precio: $85</p><button onclick="agregarCarrito('Pepino',85)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/zanahoria.jpeg"><h3>Zanahoria</h3><p>Raíz comestible.</p><p>Medidas: 30–40 cm</p><p>Precio: $50</p><button onclick="agregarCarrito('Zanahoria',50)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/cebolla.jpeg"><h3>Cebolla</h3><p>Bulbo.</p><p>Medidas: 30–50 cm</p><p>Precio: $45</p><button onclick="agregarCarrito('Cebolla',45)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/chile.jpeg"><h3>Chile</h3><p>Picante.</p><p>Medidas: 40–80 cm</p><p>Precio: $70</p><button onclick="agregarCarrito('Chile',70)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/calabaza.jpeg"><h3>Calabaza</h3><p>Hortaliza grande.</p><p>Medidas: 80–150 cm</p><p>Precio: $95</p><button onclick="agregarCarrito('Calabaza',95)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/brocoli.jpeg"><h3>Brócoli</h3><p>Hortaliza verde.</p><p>Medidas: 50–70 cm</p><p>Precio: $85</p><button onclick="agregarCarrito('Brócoli',85)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/coliflor.jpeg"><h3>Coliflor</h3><p>Hortaliza blanca.</p><p>Medidas: 50–70 cm</p><p>Precio: $90</p><button onclick="agregarCarrito('Coliflor',90)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/acelga.jpeg"><h3>Acelga</h3><p>Hoja verde.</p><p>Medidas: 40–60 cm</p><p>Precio: $45</p><button onclick="agregarCarrito('Acelga',45)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/espinaca.jpeg"><h3>Espinaca</h3><p>Nutritiva.</p><p>Medidas: 30–45 cm</p><p>Precio: $45</p><button onclick="agregarCarrito('Espinaca',45)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/ajo.jpeg"><h3>Ajo</h3><p>Condimento.</p><p>Medidas: 30–50 cm</p><p>Precio: $40</p><button onclick="agregarCarrito('Ajo',40)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/papa.jpeg"><h3>Papa</h3><p>Tubérculo.</p><p>Medidas: 40–60 cm</p><p>Precio: $55</p><button onclick="agregarCarrito('Papa',55)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/maiz.jpeg"><h3>Maíz</h3><p>Cereal.</p><p>Medidas: 150–250 cm</p><p>Precio: $100</p><button onclick="agregarCarrito('Maíz',100)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/remolacha.jpeg"><h3>Remolacha</h3><p>Raíz dulce.</p><p>Medidas: 30–50 cm</p><p>Precio: $60</p><button onclick="agregarCarrito('Remolacha',60)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/ejote.jpeg"><h3>Ejote</h3><p>Leguminosa.</p><p>Medidas: 40–70 cm</p><p>Precio: $65</p><button onclick="agregarCarrito('Ejote',65)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/chayote.jpeg"><h3>Chayote</h3><p>Hortaliza suave.</p><p>Medidas: 100–200 cm</p><p>Precio: $70</p><button onclick="agregarCarrito('Chayote',70)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/apio.jpeg"><h3>Apio</h3><p>Crujiente.</p><p>Medidas: 40–60 cm</p><p>Precio: $55</p><button onclick="agregarCarrito('Apio',55)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/pimiento.jpeg"><h3>Pimiento</h3><p>Hortaliza dulce.</p><p>Medidas: 50–80 cm</p><p>Precio: $75</p><button onclick="agregarCarrito('Pimiento',75)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/berenjena.jpeg"><h3>Berenjena</h3><p>Hortaliza morada.</p><p>Medidas: 60–100 cm</p><p>Precio: $80</p><button onclick="agregarCarrito('Berenjena',80)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/rabano.jpeg"><h3>Rábano</h3><p>Crecimiento rápido.</p><p>Medidas: 20–30 cm</p><p>Precio: $35</p><button onclick="agregarCarrito('Rábano',35)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/col.jpeg"><h3>Col</h3><p>Hortaliza compacta.</p><p>Medidas: 40–60 cm</p><p>Precio: $65</p><button onclick="agregarCarrito('Col',65)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/nabo.jpeg"><h3>Nabo</h3><p>Raíz.</p><p>Medidas: 30–50 cm</p><p>Precio: $50</p><button onclick="agregarCarrito('Nabo',50)">Agregar</button></div>
+
+<div class="planta"><img src="hortalizas/alcachofa.jpeg"><h3>Alcachofa</h3><p>Hortaliza gourmet.</p><p>Medidas: 100–150 cm</p><p>Precio: $120</p><button onclick="agregarCarrito('Alcachofa',120)">Agregar</button></div>
+
+</section>
+
+<!-- Frutales -->
+ <section id="frutales" class="seccion-catalogo ">
+        <h2 class="titulo-categoria">🍎 Plantas Frutales</h2>
+        <div class="products-grid">
+          
+
+<div class="planta"><img src="frutales/fresa.jpeg"><h3>Fresa</h3><p>Fruto dulce.</p><p>Medidas: 20–30 cm</p><p>Precio: $70</p><button onclick="agregarCarrito('Fresa',70)">Agregar</button></div>
+
+<div class="planta"><img src="frutales/limon.jpeg"><h3>Limón</h3><p>Cítrico.</p><p>Medidas: 80–150 cm</p><p>Precio: $180</p><button onclick="agregarCarrito('Limón',180)">Agregar</button></div>
+
+<div class="planta"><img src="frutales/naranja.jpeg"><h3>Naranja</h3><p>Fruto cítrico.</p><p>Medidas: 100–200 cm</p><p>Precio: $190</p><button onclick="agregarCarrito('Naranja',190)">Agregar</button></div>
+
+<div class="planta"><img src="frutales/manzano.jpeg"><h3>Manzano</h3><p>Fruto dulce.</p><p>Medidas: 120–250 cm</p><p>Precio: $220</p><button onclick="agregarCarrito('Manzano',220)">Agregar</button></div>
+
+<div class="planta"><img src="frutales/platano.jpeg"><h3>Plátano</h3><p>Tropical.</p><p>Medidas: 150–300 cm</p><p>Precio: $250</p><button onclick="agregarCarrito('Plátano',250)">Agregar</button></div>
+
+<div class="planta"><img src="frutales/mango.jpeg"><h3>Mango</h3><p>Dulce tropical.</p><p>Medidas: 150–300 cm</p><p>Precio: $260</p><button onclick="agregarCarrito('Mango',260)">Agregar</button></div>
+
+<div class="planta"><img src="frutales/pera.jpeg"><h3>Pera</h3><p>Jugosa.</p><p>Medidas: 120–250 cm</p><p>Precio: $220</p><button onclick="agregarCarrito('Pera',220)">Agregar</button></div>
+
+<div class="planta"><img src="frutales/durazno.jpeg"><h3>Durazno</h3><p>Fruto suave.</p><p>Medidas: 120–250 cm</p><p>Precio: $230</p><button onclick="agregarCarrito('Durazno',230)">Agregar</button></div>
+
+<div class="planta"><img src="frutales/cereza.jpeg"><h3>Cereza</h3><p>Dulce.</p><p>Medidas: 120–250 cm</p><p>Precio: $240</p><button onclick="agregarCarrito('Cereza',240)">Agregar</button></div>
+
+<div class="planta"><img src="frutales/higo.jpeg"><h3>Higo</h3><p>Fruto mediterráneo.</p><p>Medidas: 120–300 cm</p><p>Precio: $210</p><button onclick="agregarCarrito('Higo',210)">Agregar</button></div>
+
+<div class="planta"> <img src="frutales/mora.jpeg"> <h3>Mora</h3> <p>Arbusto productor de frutos.</p> <p>Medidas: 60–100 cm</p> <p>Precio: $130</p> <button onclick="agregarCarrito('Mora',130)">Agregar</button></div>
+
+<div class="planta"><img src="frutales/frambuesa.jpeg"><h3>Frambuesa</h3><p>Planta frutal de fácil cultivo.</p><p>Medidas: 50–90 cm</p><p>Precio: $140</p><button onclick="agregarCarrito('Frambuesa',140)">Agregar</button></div>
+
+<div class="planta"><img src="frutales/mandarina.jpeg"><h3>Mandarina</h3><p>Cítrico dulce y aromático.</p><p>Medidas: 90–130 cm</p><p>Precio: $180</p><button onclick="agregarCarrito('Mandarina',180)">Agregar</button></div>
+
+<div class="planta"><img src="frutales/toronja.jpeg"><h3>Toronja</h3><p>Árbol cítrico de gran tamaño.</p><p>Medidas: 120–170 cm</p><p>Precio: $220</p><button onclick="agregarCarrito('Toronja',220)">Agregar</button></div>
+
+<div class="planta"><img src="frutales/zarzamora.jpeg"><h3>Zarzamora</h3><p>Planta trepadora frutal.</p><p>Medidas: 70–110 cm</p><p>Precio: $150</p><button onclick="agregarCarrito('Zarzamora',150)">Agregar</button></div>
+
+<div class="planta"><img src="frutales/tamarindo.jpeg"><h3>Tamarindo</h3><p>Árbol tropical frutal.</p><p>Medidas: 150–200 cm</p><p>Precio: $260</p><button onclick="agregarCarrito('Tamarindo',260)">Agregar</button></div>
+
+<div class="planta"><img src="frutales/coco.jpeg"><h3>Coco</h3><p>Palmera productora de coco.</p><p>Medidas: 180–250 cm</p> <p>Precio: $300</p><button onclick="agregarCarrito('Coco',300)">Agregar</button></div>
+
+<div class="planta"> <img src="frutales/nispero.jpeg"><h3>Níspero</h3><p>Árbol frutal ornamental.</p><p>Medidas: 100–140 cm</p><p>Precio: $190</p><button onclick="agregarCarrito('Níspero',190)">Agregar</button></div>
+
+<div class="planta"><img src="frutales/chicozapote.jpeg"><h3>Chicozapote</h3><p>Frutal tropical dulce.</p><p>Medidas: 130–180 cm</p><p>Precio: $240</p><button onclick="agregarCarrito('Chicozapote',240)">Agregar</button></div>
+
+<div class="planta"> <img src="frutales/guanabana.jpeg"><h3>Guanábana</h3><p>Fruta tropical aromática.</p><p>Medidas: 140–190 cm</p><p>Precio: $260</p><button onclick="agregarCarrito('Guanábana',260)">Agregar</button></div>
+
+<div class="planta"><img src="frutales/mamey.jpeg"><h3>Mamey</h3><p>Árbol frutal tropical.</p> <p>Medidas: 150–200 cm</p> <p>Precio: $280</p> <button onclick="agregarCarrito('Mamey',280)">Agregar</button></div>
+
+<div class="planta"><img src="frutales/pitahaya.jpeg"><h3>Pitahaya</h3><p>Planta frutal exótica.</p><p>Medidas: 60–100 cm</p><p>Precio: $170</p><button onclick="agregarCarrito('Pitahaya',170)">Agregar</button></div>
+
+<div class="planta"><img src="frutales/ciruela.jpeg"><h3>Ciruela</h3><p>Fruto dulce de clima templado.</p><p>Medidas: 110–160 cm</p><p>Precio: $210</p><button onclick="agregarCarrito('Ciruela',210)">Agregar</button></div>
+
+<div class="planta"><img src="frutales/carambola.jpeg"><h3>Carambola</h3> <p>Fruta tropical en forma de estrella.</p><p>Medidas: 120–170 cm</p> <p>Precio: $230</p> <button onclick="agregarCarrito('Carambola',230)">Agregar</button></div>
+
+</section>
+
+</div>
+</div>
+
+
+<style>
+  body { font-family: Arial, sans-serif; }
+
+  #chatbot {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  background: #f4fff4;
+  border: 2px solid #4CAF50;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  display: none; /* IMPORTANTE */
+  flex-direction: column;
+}
+#chatButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 65px;
+  height: 65px;
+  background: #4CAF50;
+  color: white;
+  font-size: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+  #chatHeader {
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 12px 12px 0 0;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  #chatMessages {
+    padding: 10px;
+    height: 250px;
+    overflow-y: auto;
+    font-size: 14px;
+  }
+
+  .bot { color: #2e7d32; margin-bottom: 8px; }
+  .user { text-align: right; color: #333; margin-bottom: 8px; }
+
+  #chatInputArea { display: flex; border-top: 1px solid #ccc; }
+
+  #chatInput {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 0 0 0 12px;
+    outline: none;
+  }
+
+  #sendBtn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 0 0 12px 0;
+    cursor: pointer;
+  }
+
+  #sendBtn:hover { background: #45a049; }
+</style>
+</head>
+<body>
+<div id="chatButton">🌿</div>
+<div id="chatbot">
+  <div id="chatHeader">🌿 Verde Vida</div>
+  <div id="chatMessages">
+    <div class="bot">
+      ¡Bienvenido a Verde Vida! 🌿  
+      Soy tu guía virtual entre frutales y plantas aromáticas.  
+      Estoy aquí para ayudarte a elegir la planta perfecta 🌱  
+      ¿Cuál te interesa hoy?
+    </div>
+  </div>
+  <div id="chatInputArea">
+    <input type="text" id="chatInput" placeholder="Escribe tu mensaje...">
+    <button id="sendBtn">Enviar</button>
+  </div>
+</div>
+
+<script>
+const input = document.getElementById("chatInput");
+const sendBtn = document.getElementById("sendBtn");
+const messages = document.getElementById("chatMessages");
+
+const plantas = {
+
+/* ========= 25 FRUTALES ========= */
+
+limon:{nombre:"🍋 Limón",info:"☀️ Sol pleno. 💧 Riego moderado. 🌱 Buen drenaje y poda anual."},
+naranja:{nombre:"🍊 Naranja",info:"☀️ Sol directo. 💧 Riego regular. 🌱 Suelo fértil."},
+mandarina:{nombre:"🍊 Mandarina",info:"☀️ Sol pleno. 💧 Riego moderado. 🌱 Protección contra frío."},
+toronja:{nombre:"🍊 Toronja",info:"☀️ Sol directo. 💧 Riego regular. 🌱 Buen drenaje."},
+mango:{nombre:"🥭 Mango",info:"☀️ Mucho sol. 💧 Moderado. 🌱 Clima cálido."},
+aguacate:{nombre:"🥑 Aguacate",info:"☀️ Sol pleno. 💧 Moderado. 🌱 Suelo profundo."},
+manzana:{nombre:"🍎 Manzana",info:"☀️ Sol directo. 💧 Regular. 🌱 Clima templado."},
+pera:{nombre:"🍐 Pera",info:"☀️ Sol pleno. 💧 Regular. 🌱 Suelo fértil."},
+durazno:{nombre:"🍑 Durazno",info:"☀️ Sol directo. 💧 Moderado. 🌱 Poda anual."},
+ciruela:{nombre:"🍑 Ciruela",info:"☀️ Sol pleno. 💧 Regular. 🌱 Buen drenaje."},
+cereza:{nombre:"🍒 Cereza",info:"☀️ Sol directo. 💧 Moderado. 🌱 Clima fresco."},
+higo:{nombre:"🌳 Higo",info:"☀️ Sol pleno. 💧 Poco riego. 🌱 Resistente."},
+granada:{nombre:"🍎 Granada",info:"☀️ Sol directo. 💧 Moderado. 🌱 Suelo seco."},
+guayaba:{nombre:"🍈 Guayaba",info:"☀️ Sol pleno. 💧 Regular. 🌱 Clima cálido."},
+papaya:{nombre:"🍈 Papaya",info:"☀️ Mucho sol. 💧 Frecuente. 🌱 Suelo drenado."},
+maracuya:{nombre:"🍈 Maracuyá",info:"☀️ Sol directo. 💧 Regular. 🌱 Necesita soporte."},
+fresa:{nombre:"🍓 Fresa",info:"☀️ Sol o semisombra. 💧 Frecuente. 🌱 Ideal en maceta."},
+zarzamora:{nombre:"🫐 Zarzamora",info:"☀️ Sol pleno. 💧 Regular. 🌱 Soporte para ramas."},
+frambuesa:{nombre:"🫐 Frambuesa",info:"☀️ Sol directo. 💧 Moderado. 🌱 Clima templado."},
+arandano:{nombre:"🫐 Arándano",info:"☀️ Sol o semisombra. 💧 Frecuente. 🌱 Suelo ácido."},
+uva:{nombre:"🍇 Uva",info:"☀️ Sol pleno. 💧 Moderado. 🌱 Requiere guía."},
+platano:{nombre:"🍌 Plátano",info:"☀️ Mucho sol. 💧 Abundante. 🌱 Clima cálido."},
+coco:{nombre:"🥥 Coco",info:"☀️ Sol intenso. 💧 Regular. 🌱 Clima tropical."},
+lima:{nombre:"🍋 Lima",info:"☀️ Sol pleno. 💧 Moderado. 🌱 Buen drenaje."},
+tamarindo:{nombre:"🌳 Tamarindo",info:"☀️ Sol directo. 💧 Poco riego. 🌱 Resistente al calor."},
+
+/* ========= 25 AROMÁTICAS ========= */
+
+menta:{nombre:"🌿 Menta",info:"🌤️ Semisombra. 💧 Frecuente. 🌱 Crece rápido."},
+hierbabuena:{nombre:"🌿 Hierbabuena",info:"🌤️ Semisombra. 💧 Regular. 🌱 Ideal en maceta."},
+romero:{nombre:"🌿 Romero",info:"☀️ Sol directo. 💧 Poco riego. 🌱 Resistente."},
+albahaca:{nombre:"🌱 Albahaca",info:"☀️ Sol pleno. 💧 Constante. 🌱 Sensible al frío."},
+lavanda:{nombre:"💜 Lavanda",info:"☀️ Sol pleno. 💧 Poco riego. 🌱 Suelo seco."},
+cilantro:{nombre:"🌱 Cilantro",info:"🌤️ Semisombra. 💧 Frecuente. 🌱 Crecimiento rápido."},
+perejil:{nombre:"🌿 Perejil",info:"🌤️ Semisombra. 💧 Regular. 🌱 Ideal en maceta."},
+tomillo:{nombre:"🌿 Tomillo",info:"☀️ Sol directo. 💧 Poco riego. 🌱 Resistente."},
+oregano:{nombre:"🌿 Orégano",info:"☀️ Sol pleno. 💧 Moderado. 🌱 Fácil cuidado."},
+salvia:{nombre:"🌿 Salvia",info:"☀️ Sol directo. 💧 Poco riego. 🌱 Suelo drenado."},
+laurel:{nombre:"🌿 Laurel",info:"☀️ Sol o semisombra. 💧 Moderado. 🌱 Crece en maceta."},
+cebollin:{nombre:"🌱 Cebollín",info:"☀️ Sol directo. 💧 Regular. 🌱 Fácil cultivo."},
+estragon:{nombre:"🌿 Estragón",info:"☀️ Sol pleno. 💧 Moderado. 🌱 Clima templado."},
+anis:{nombre:"🌱 Anís",info:"☀️ Sol directo. 💧 Regular. 🌱 Suelo ligero."},
+ruda:{nombre:"🌿 Ruda",info:"☀️ Sol pleno. 💧 Poco riego. 🌱 Muy resistente."},
+manzanilla:{nombre:"🌼 Manzanilla",info:"☀️ Sol directo. 💧 Moderado. 🌱 Fácil cultivo."},
+stevia:{nombre:"🌿 Stevia",info:"☀️ Sol o semisombra. 💧 Regular. 🌱 Clima cálido."},
+melisa:{nombre:"🌿 Melisa",info:"🌤️ Semisombra. 💧 Frecuente. 🌱 Aroma relajante."},
+hinojo:{nombre:"🌿 Hinojo",info:"☀️ Sol pleno. 💧 Moderado. 🌱 Buen drenaje."},
+mejorana:{nombre:"🌿 Mejorana",info:"☀️ Sol directo. 💧 Moderado. 🌱 Fácil cuidado."},
+epazote:{nombre:"🌿 Epazote",info:"☀️ Sol pleno. 💧 Regular. 🌱 Resistente."},
+valeriana:{nombre:"🌿 Valeriana",info:"🌤️ Semisombra. 💧 Regular. 🌱 Aroma suave."},
+calendula:{nombre:"🌼 Caléndula",info:"☀️ Sol directo. 💧 Moderado. 🌱 Flor medicinal."},
+mentol:{nombre:"🌿 Menta Mentolada",info:"🌤️ Semisombra. 💧 Frecuente. 🌱 Aroma intenso."},
+aloe:{nombre:"🌿 Aloe Vera",info:"☀️ Sol indirecto. 💧 Poco riego. 🌱 Planta medicinal resistente."}
+
+};
+
+function limpiarTexto(texto){
+  return texto.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+}
+
+function sendMessage(){
+  const userText=input.value.trim();
+  if(userText==="") return;
+
+  const texto=limpiarTexto(userText);
+  messages.innerHTML+=`<div class="user">${userText}</div>`;
+
+  let botReply="🌿 Pregúntame por cualquier frutal o aromática disponible.";
+  let encontrada=false;
+
+  for(let clave in plantas){
+    if(texto.includes(clave)){
+      const p=plantas[clave];
+      botReply=`<strong>${p.nombre}</strong><br>${p.info}`;
+      encontrada=true;
+      break;
+    }
+  }
+
+  setTimeout(()=>{
+    messages.innerHTML+=`<div class="bot">${botReply}</div>`;
+    messages.scrollTop=messages.scrollHeight;
+  },600);
+
+  input.value="";
+}
+
+sendBtn.addEventListener("click",sendMessage);
+input.addEventListener("keypress",function(e){
+  if(e.key==="Enter") sendMessage();
+});
+
+const chatButton = document.getElementById("chatButton");
+const chatbotBox = document.getElementById("chatbot");
+
+// Abrir chat
+chatButton.addEventListener("click", function() {
+  chatbotBox.style.display = "flex";
+  chatButton.style.display = "none";
+});
+
+// Cerrar chat al hacer doble click en el header
+document.getElementById("chatHeader").addEventListener("dblclick", function() {
+  chatbotBox.style.display = "none";
+  chatButton.style.display = "flex";
+});
+
+</script>
+
+
+
+</body>
+</html>
+
+
+<footer>
+    <div class="container footer-grid">
+        <div>
+            <h3>Verde Vida</h3>
+            <p>Cultivamos el futuro de forma sostenible.</p>
+        </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/verdevida_invernadero/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@invernaderoverdevida"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/5215633638409?text=Hola%20Verde%20Vida,%20quiero%20información%20sobre%20sus%20plantas%20"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+    <p class="copy">© 2026 Invernadero Verde Vida - Todos los derechos reservados.</p>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>

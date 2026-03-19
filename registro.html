@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro - Verde Vida</title>
+    <style>
+        body {
+            background: #0f0f0f;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .box {
+            background: #1c1c1c;
+            padding: 40px;
+            border-radius: 10px;
+            width: 320px;
+            text-align: center;
+            color: white;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.5);
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+            box-sizing: border-box; /* Evita que el input se salga del cuadro */
+        }
+
+        /* Botón principal rosa */
+        .btn-registro {
+            width: 100%;
+            padding: 12px;
+            background: #ff004f;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        /* Botón para enviar el código (estilo diferente) */
+        .btn-verificar {
+            background: transparent;
+            border: 1px solid #ff004f;
+            color: #ff004f;
+            margin-bottom: 10px;
+        }
+
+        .btn-verificar:hover {
+            background: #ff004f;
+            color: white;
+        }
+
+        a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+
+        #seccion-codigo {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Registrarse</h2>
+
+    <form action="registro.php" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre Completo" required>
+        <input type="tel" name="telefono" placeholder="Número de Teléfono" required>
+        <input type="email" name="correo" id="email" placeholder="Cuenta de Google" required>
+
+        <button type="button" class="btn-registro" onclick="mostrarCodigo()">
+            Enviar código al correo
+        </button>
+
+        <div id="seccion-codigo" style="display:none;">
+            <p style="font-size: 12px; color: #aaa;">Revisa tu bandeja de entrada</p>
+            <input type="text" name="codigo_verificacion" placeholder="Código de 6 dígitos">
+
+            
+            
+            <input type="password" name="password" placeholder="Crea una contraseña" required>
+           
+            <main>
+ <script src="https://google.com/recaptcha/api.js" async defer></script>
+ <form action="tu-servidor.php" method="POST">
+  <input type="text" name="nombre" placeholder="Tu nombre" required>
+  
+  <div class="g-recaptcha" data-sitekey="6Le1k4csAAAAAAuatKu8ukw0AaHt_GkXvJM3sv4D"></div>
+  
+  <br/>
+
+           
+            <button type="submit" class="btn-registro">Finalizar Registro</button>
+        </div>
+
+        <p style="font-size: 14px; margin-top: 20px;">¿Ya tienes cuenta?</p>
+        <a href="index.html">Iniciar sesión</a>
+    </form>
+</div>
+
+<script>
+    function mostrarCodigo() {
+        const email = document.getElementById('email').value;
+        if(email === "") {
+            alert("Por favor, ingresa tu correo primero.");
+            return;
+        }
+        // Mostramos la sección del código y la contraseña
+        document.getElementById('seccion-codigo').style.display = 'block';
+        alert("Se ha enviado un código de prueba a: " + email);
+    }
+</script>
+
+</body>
+</html>

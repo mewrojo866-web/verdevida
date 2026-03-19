@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Nosotros | Verde Vida Invernadero</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="top-bar" id="topBar">
+    <p>🌿 ¡Envíos gratis en tu primera compra usando el código <b>PRIMAVERA</b>! 🌿</p>
+    <span class="close-btn" onclick="document.getElementById('topBar').style.display='none'">×</span>
+</div>
+
+<header>
+    <div class="container header-flex">
+        <div class="logo">
+            <i class="fas fa-leaf"></i> <span>Verde Vida</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="acercade.html">Acerca de</a></li>
+                <li><a href="#">Catálogo</a></li>
+                <li><a href="nosotros.html" class="activo">Nosotros</a></li> </ul>
+        
+            </div>
+        </nav>
+    </div>
+</header>
+
+<title>Chatbot Verde Vida</title>
+<style>
+  body { font-family: Arial, sans-serif; }
+
+  #chatbot {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 300px;
+  background: #f4fff4;
+  border: 2px solid #4CAF50;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  display: none; /* IMPORTANTE */
+  flex-direction: column;
+}
+#chatButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 65px;
+  height: 65px;
+  background: #4CAF50;
+  color: white;
+  font-size: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+  #chatHeader {
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 12px 12px 0 0;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  #chatMessages {
+    padding: 10px;
+    height: 250px;
+    overflow-y: auto;
+    font-size: 14px;
+  }
+
+  .bot { color: #2e7d32; margin-bottom: 8px; }
+  .user { text-align: right; color: #333; margin-bottom: 8px; }
+
+  #chatInputArea { display: flex; border-top: 1px solid #ccc; }
+
+  #chatInput {
+    flex: 1;
+    padding: 8px;
+    border: none;
+    border-radius: 0 0 0 12px;
+    outline: none;
+  }
+
+  #sendBtn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 0 0 12px 0;
+    cursor: pointer;
+  }
+
+  #sendBtn:hover { background: #45a049; }
+</style>
+</head>
+<body>
+<div id="chatButton">🌿</div>
+<div id="chatbot">
+  <div id="chatHeader">🌿 Verde Vida</div>
+  <div id="chatMessages">
+    <div class="bot">
+      ¡Bienvenido a Verde Vida! 🌿  
+      Soy tu guía virtual entre frutales y plantas aromáticas.  
+      Estoy aquí para ayudarte a elegir la planta perfecta 🌱  
+      ¿Cuál te interesa hoy?
+    </div>
+  </div>
+  <div id="chatInputArea">
+    <input type="text" id="chatInput" placeholder="Escribe tu mensaje...">
+    <button id="sendBtn">Enviar</button>
+  </div>
+</div>
+
+<script>
+const input = document.getElementById("chatInput");
+const sendBtn = document.getElementById("sendBtn");
+const messages = document.getElementById("chatMessages");
+
+const plantas = {
+
+/* ========= 25 FRUTALES ========= */
+
+limon:{nombre:"🍋 Limón",info:"☀️ Sol pleno. 💧 Riego moderado. 🌱 Buen drenaje y poda anual."},
+naranja:{nombre:"🍊 Naranja",info:"☀️ Sol directo. 💧 Riego regular. 🌱 Suelo fértil."},
+mandarina:{nombre:"🍊 Mandarina",info:"☀️ Sol pleno. 💧 Riego moderado. 🌱 Protección contra frío."},
+toronja:{nombre:"🍊 Toronja",info:"☀️ Sol directo. 💧 Riego regular. 🌱 Buen drenaje."},
+mango:{nombre:"🥭 Mango",info:"☀️ Mucho sol. 💧 Moderado. 🌱 Clima cálido."},
+aguacate:{nombre:"🥑 Aguacate",info:"☀️ Sol pleno. 💧 Moderado. 🌱 Suelo profundo."},
+manzana:{nombre:"🍎 Manzana",info:"☀️ Sol directo. 💧 Regular. 🌱 Clima templado."},
+pera:{nombre:"🍐 Pera",info:"☀️ Sol pleno. 💧 Regular. 🌱 Suelo fértil."},
+durazno:{nombre:"🍑 Durazno",info:"☀️ Sol directo. 💧 Moderado. 🌱 Poda anual."},
+ciruela:{nombre:"🍑 Ciruela",info:"☀️ Sol pleno. 💧 Regular. 🌱 Buen drenaje."},
+cereza:{nombre:"🍒 Cereza",info:"☀️ Sol directo. 💧 Moderado. 🌱 Clima fresco."},
+higo:{nombre:"🌳 Higo",info:"☀️ Sol pleno. 💧 Poco riego. 🌱 Resistente."},
+granada:{nombre:"🍎 Granada",info:"☀️ Sol directo. 💧 Moderado. 🌱 Suelo seco."},
+guayaba:{nombre:"🍈 Guayaba",info:"☀️ Sol pleno. 💧 Regular. 🌱 Clima cálido."},
+papaya:{nombre:"🍈 Papaya",info:"☀️ Mucho sol. 💧 Frecuente. 🌱 Suelo drenado."},
+maracuya:{nombre:"🍈 Maracuyá",info:"☀️ Sol directo. 💧 Regular. 🌱 Necesita soporte."},
+fresa:{nombre:"🍓 Fresa",info:"☀️ Sol o semisombra. 💧 Frecuente. 🌱 Ideal en maceta."},
+zarzamora:{nombre:"🫐 Zarzamora",info:"☀️ Sol pleno. 💧 Regular. 🌱 Soporte para ramas."},
+frambuesa:{nombre:"🫐 Frambuesa",info:"☀️ Sol directo. 💧 Moderado. 🌱 Clima templado."},
+arandano:{nombre:"🫐 Arándano",info:"☀️ Sol o semisombra. 💧 Frecuente. 🌱 Suelo ácido."},
+uva:{nombre:"🍇 Uva",info:"☀️ Sol pleno. 💧 Moderado. 🌱 Requiere guía."},
+platano:{nombre:"🍌 Plátano",info:"☀️ Mucho sol. 💧 Abundante. 🌱 Clima cálido."},
+coco:{nombre:"🥥 Coco",info:"☀️ Sol intenso. 💧 Regular. 🌱 Clima tropical."},
+lima:{nombre:"🍋 Lima",info:"☀️ Sol pleno. 💧 Moderado. 🌱 Buen drenaje."},
+tamarindo:{nombre:"🌳 Tamarindo",info:"☀️ Sol directo. 💧 Poco riego. 🌱 Resistente al calor."},
+
+/* ========= 25 AROMÁTICAS ========= */
+
+menta:{nombre:"🌿 Menta",info:"🌤️ Semisombra. 💧 Frecuente. 🌱 Crece rápido."},
+hierbabuena:{nombre:"🌿 Hierbabuena",info:"🌤️ Semisombra. 💧 Regular. 🌱 Ideal en maceta."},
+romero:{nombre:"🌿 Romero",info:"☀️ Sol directo. 💧 Poco riego. 🌱 Resistente."},
+albahaca:{nombre:"🌱 Albahaca",info:"☀️ Sol pleno. 💧 Constante. 🌱 Sensible al frío."},
+lavanda:{nombre:"💜 Lavanda",info:"☀️ Sol pleno. 💧 Poco riego. 🌱 Suelo seco."},
+cilantro:{nombre:"🌱 Cilantro",info:"🌤️ Semisombra. 💧 Frecuente. 🌱 Crecimiento rápido."},
+perejil:{nombre:"🌿 Perejil",info:"🌤️ Semisombra. 💧 Regular. 🌱 Ideal en maceta."},
+tomillo:{nombre:"🌿 Tomillo",info:"☀️ Sol directo. 💧 Poco riego. 🌱 Resistente."},
+oregano:{nombre:"🌿 Orégano",info:"☀️ Sol pleno. 💧 Moderado. 🌱 Fácil cuidado."},
+salvia:{nombre:"🌿 Salvia",info:"☀️ Sol directo. 💧 Poco riego. 🌱 Suelo drenado."},
+laurel:{nombre:"🌿 Laurel",info:"☀️ Sol o semisombra. 💧 Moderado. 🌱 Crece en maceta."},
+cebollin:{nombre:"🌱 Cebollín",info:"☀️ Sol directo. 💧 Regular. 🌱 Fácil cultivo."},
+estragon:{nombre:"🌿 Estragón",info:"☀️ Sol pleno. 💧 Moderado. 🌱 Clima templado."},
+anis:{nombre:"🌱 Anís",info:"☀️ Sol directo. 💧 Regular. 🌱 Suelo ligero."},
+ruda:{nombre:"🌿 Ruda",info:"☀️ Sol pleno. 💧 Poco riego. 🌱 Muy resistente."},
+manzanilla:{nombre:"🌼 Manzanilla",info:"☀️ Sol directo. 💧 Moderado. 🌱 Fácil cultivo."},
+stevia:{nombre:"🌿 Stevia",info:"☀️ Sol o semisombra. 💧 Regular. 🌱 Clima cálido."},
+melisa:{nombre:"🌿 Melisa",info:"🌤️ Semisombra. 💧 Frecuente. 🌱 Aroma relajante."},
+hinojo:{nombre:"🌿 Hinojo",info:"☀️ Sol pleno. 💧 Moderado. 🌱 Buen drenaje."},
+mejorana:{nombre:"🌿 Mejorana",info:"☀️ Sol directo. 💧 Moderado. 🌱 Fácil cuidado."},
+epazote:{nombre:"🌿 Epazote",info:"☀️ Sol pleno. 💧 Regular. 🌱 Resistente."},
+valeriana:{nombre:"🌿 Valeriana",info:"🌤️ Semisombra. 💧 Regular. 🌱 Aroma suave."},
+calendula:{nombre:"🌼 Caléndula",info:"☀️ Sol directo. 💧 Moderado. 🌱 Flor medicinal."},
+mentol:{nombre:"🌿 Menta Mentolada",info:"🌤️ Semisombra. 💧 Frecuente. 🌱 Aroma intenso."},
+aloe:{nombre:"🌿 Aloe Vera",info:"☀️ Sol indirecto. 💧 Poco riego. 🌱 Planta medicinal resistente."}
+
+};
+
+function limpiarTexto(texto){
+  return texto.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
+}
+
+function sendMessage(){
+  const userText=input.value.trim();
+  if(userText==="") return;
+
+  const texto=limpiarTexto(userText);
+  messages.innerHTML+=`<div class="user">${userText}</div>`;
+
+  let botReply="🌿 Pregúntame por cualquier frutal o aromática disponible.";
+  let encontrada=false;
+
+  for(let clave in plantas){
+    if(texto.includes(clave)){
+      const p=plantas[clave];
+      botReply=`<strong>${p.nombre}</strong><br>${p.info}`;
+      encontrada=true;
+      break;
+    }
+  }
+
+  setTimeout(()=>{
+    messages.innerHTML+=`<div class="bot">${botReply}</div>`;
+    messages.scrollTop=messages.scrollHeight;
+  },600);
+
+  input.value="";
+}
+
+sendBtn.addEventListener("click",sendMessage);
+input.addEventListener("keypress",function(e){
+  if(e.key==="Enter") sendMessage();
+});
+
+const chatButton = document.getElementById("chatButton");
+const chatbotBox = document.getElementById("chatbot");
+
+// Abrir chat
+chatButton.addEventListener("click", function() {
+  chatbotBox.style.display = "flex";
+  chatButton.style.display = "none";
+});
+
+// Cerrar chat al hacer doble click en el header
+document.getElementById("chatHeader").addEventListener("dblclick", function() {
+  chatbotBox.style.display = "none";
+  chatButton.style.display = "flex";
+});
+
+</script>
+
+</body>
+</html>
+
+
+<main>
+    <section class="nosotros-container">
+    <div class="nosotros-content">
+        <div class="nosotros-text">
+            <span class="subtitle">NUESTRA HISTORIA</span>
+            <h2>Nuestra Pasión por la Naturaleza</h2>
+            <p>En <strong>Verde Vida</strong>, no solo cultivamos plantas, cultivamos bienestar. Somos un invernadero profesional dedicado a acercar la belleza y los beneficios de la naturaleza a tu hogar, oficina o proyecto paisajístico.</p>
+            <p>Nuestro equipo de expertos botánicos cuida cada brote con los más altos estándares de calidad y sostenibilidad.</p>
+            <a href="catalogo.html" class="btn-primary">Explorar el Catálogo</a>
+        </div>
+        
+        <div class="nosotros-map">
+            <h3>Ubicación</h3>
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.1983678615684!2d-98.98827252501387!3d19.40383328186936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1e3315788b631%3A0x667690c1499579bf!2sUTN%20-%20Universidad%20Tecnol%C3%B3gica%20de%20Nezahualc%C3%B3yotl!5e0!3m2!1ses-419!2smx!4v1772124452692!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+      </div>
+    </section>
+</main>
+
+<section class="resenas">
+    <h2 class="titulo-seccion">Experiencias Verde Vida</h2>
+    <div class="contenedor-resenas">
+        <div class="tarjeta-resena">
+            <div class="estrellas">★★★★★</div>
+            <p>"Las plantas llegaron en perfecto estado. Se nota el cuidado y la pasión que le ponen a cada brote. ¡Mi sala ahora tiene mucha vida!"</p>
+            <span class="autor">- María García</span>
+        </div>
+
+        <div class="tarjeta-resena">
+            <div class="estrellas">★★★★★</div>
+            <p>"Excelente asesoría para mi proyecto de paisajismo. Son verdaderos expertos botánicos."</p>
+            <span class="autor">- Juan Pérez</span>
+        </div>
+
+        <div class="tarjeta-resena">
+            <div class="estrellas">★★★★★</div>
+            <p>"El catálogo es increíble y la entrega fue súper rápida. Muy recomendado para amantes de la naturaleza."</p>
+            <span class="autor">- Ana Lynch</span>
+        
+            <div class="contenedor-formulario-resena" style="text-align: center; margin-top: 40px;">
+    <h3>¿Compraste con nosotros? ¡Déjanos tu opinión!</h3>
+    <form action="guardar_resena.php" method="POST" style="max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
+        
+        <input type="text" name="nombre" placeholder="Tu nombre" required style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+        
+        <select name="estrellas" style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            <option value="5">⭐⭐⭐⭐⭐ Excelente</option>
+            <option value="4">⭐⭐⭐⭐ Muy bueno</option>
+            <option value="3">⭐⭐⭐ Bueno</option>
+            <option value="2">⭐⭐ Regular</option>
+            <option value="1">⭐ Malo</option>
+        </select>
+
+        <textarea name="comentario" rows="4" placeholder="Cuéntanos tu experiencia con tus nuevas plantas..." required style="padding: 10px; border-radius: 5px; border: 1px solid #ccc;"></textarea>
+        
+        <button type="submit" style="background-color: #2d5a27; color: white; padding: 12px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">Publicar Reseña</button>
+    </form>
+</div>
+        
+          </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container footer-grid">
+        <div>
+            <h3>Verde Vida</h3>
+            <p>Cultivamos el futuro de forma sostenible.</p>
+        </div>
+        <div class="social-links">
+            <a href="https://www.instagram.com/verdevida_invernadero/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@invernaderoverdevida"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/5215633638409?text=Hola%20Verde%20Vida,%20quiero%20información%20sobre%20sus%20plantas%20"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+    <p class="copy">© 2026 Invernadero Verde Vida - Todos los derechos reservados.</p>
+</footer>
+
+
+<script src="script.js"></script>
+</body>
+</html>

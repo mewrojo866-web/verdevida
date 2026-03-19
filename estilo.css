@@ -1,0 +1,1032 @@
+/* =========================================
+   VARIABLES Y CONFIGURACIÓN BASE
+   ========================================= */
+:root {
+    --primary: #2d5a27;
+    --secondary: #4caf50;
+    --accent: #fbc02d;
+    --bg: #f9fbf9;
+    --text: #333;
+    --white: #ffffff;
+    --shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+
+.oculto { display: none !important; }
+.text-center { text-align: center; }
+.section-padding { padding: 60px 0; }
+
+/* =========================================
+   BARRA SUPERIOR (PROMO)
+   ========================================= */
+.top-bar {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    position: relative;
+    z-index: 1001;
+}
+
+/* =========================================
+   HEADER Y NAVEGACIÓN
+   ========================================= */
+header {
+    background: var(--white);
+    padding: 15px 0;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+/* Enlaces del Menú */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { 
+    color: var(--secondary); 
+}
+
+/* Acciones: Login y Carrito */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-login {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 600;
+    border: 2px solid var(--primary);
+    padding: 6px 18px;
+    border-radius: 20px;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.btn-login:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.cart-container {
+    position: relative;
+    cursor: pointer;
+    color: var(--primary);
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: var(--accent);
+    color: #000;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.contenedor-carrusel {
+    position: relative;
+    width: 95%;
+    max-width: 1200px;
+    height: 500px;
+    margin: 30px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #f0f0f0; /* Color de carga */
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+}
+
+.item {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: fade 0.8s;
+}
+
+.item.active { display: flex; }
+
+.info {
+    color: white;
+    max-width: 700px;
+    padding: 20px;
+}
+
+.info h1 { font-size: 3rem; margin-bottom: 15px; }
+.verde { color: #82c91e; }
+
+.boton {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Flechas posicionadas correctamente */
+.flecha {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.3);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.flecha:hover { background: rgba(255,255,255,0.8); color: #333; }
+.izq { left: 20px; }
+.der { right: 20px; }
+
+@keyframes fade {
+    from { opacity: 0.4; } 
+    to { opacity: 1; }
+}
+
+/* =========================================
+   GRID DE CARACTERÍSTICAS (ACERCA DE / POR QUÉ)
+   ========================================= */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+}
+
+.feature-card:hover { transform: translateY(-5px); }
+.feature-card i { font-size: 40px; color: var(--secondary); margin-bottom: 15px; }
+
+/* =========================================
+   CATÁLOGO DE PRODUCTOS
+   ========================================= */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.product-card:hover { transform: translateY(-10px); }
+.product-card img { width: 100%; height: 250px; object-fit: cover; }
+.product-info { padding: 20px; }
+
+.price {
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 10px 0;
+}
+
+.btn-add {
+    width: 100%;
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-add:hover { background: var(--primary); }
+
+/* =========================================
+   CHATBOT
+   ========================================= */
+#chatContainer { position: fixed; bottom: 20px; right: 20px; z-index: 2000; }
+
+#chatButton {
+    background: var(--primary);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+}
+
+#chatbot {
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    width: 300px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.chat-header { background: var(--primary); color: white; padding: 15px; text-align: center; }
+.chat-body { height: 250px; padding: 15px; overflow-y: auto; font-size: 14px; }
+.chat-footer { display: flex; border-top: 1px solid #eee; }
+.chat-footer input { flex: 1; border: none; padding: 10px; outline: none; }
+.chat-footer button { background: var(--secondary); color: white; border: none; padding: 10px 15px; }
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+    background: #222;
+    color: white;
+    padding: 40px 0 20px;
+    margin-top: 60px;
+}
+
+.footer-grid { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.social-links a { 
+    color: white; 
+    font-size: 24px; 
+    margin-left: 20px; 
+    transition: 0.3s;
+}
+
+.social-links a:hover { color: var(--secondary); }
+.copy { text-align: center; margin-top: 30px; font-size: 12px; opacity: 0.5; }
+
+/* Contenedor Visual (Imagen + Video) */
+.about-visual {
+    flex: 1;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.image-wrapper img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+/* Tarjeta de Video Moderna */
+.video-card {
+    background: var(--white);
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--secondary);
+}
+
+.video-card video {
+    width: 100%;
+    border-radius: 12px;
+    outline: none;
+}
+
+.video-card p {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Ajustes de Texto */
+.about-content h2 span {
+    display: inline-block;
+    color: var(--secondary);
+    position: relative;
+}
+
+.about-content h2 span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 8px;
+    background: var(--secondary);
+    bottom: 5px;
+    left: 0;
+    opacity: 0.2;
+    z-index: -1;
+}
+
+/* Efecto Hover en Items */
+.about-item {
+    transition: 0.3s;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.about-item:hover {
+    background: var(--white);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* --- Mejora de los Botones de Filtro --- */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.btn-filter {
+    background: #ffffff;
+    border: 2px solid var(--secondary);
+    color: var(--primary);
+    padding: 10px 22px;
+    border-radius: 50px; /* Botones ovalados modernos */
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.btn-filter:hover {
+    background: var(--secondary);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.btn-filter.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* --- Mejora de las Tarjetas (Cards) --- */
+.planta {
+    border: none; /* Quitamos bordes feos */
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08); /* Sombra más suave */
+    transition: transform 0.3s ease;
+}
+
+.planta:hover {
+    transform: scale(1.03); /* Zoom suave al pasar el mouse */
+}
+
+.planta-info {
+    padding: 20px;
+}
+
+.planta-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+
+.precio {
+    color: var(--secondary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+/* --- Botón de Agregar --- */
+.btn-add {
+    width: 100%;
+    padding: 12px;
+    background: var(--secondary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-add:hover {
+    background: var(--primary);
+}
+
+/* --- Arreglo del Menú --- */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+/* Contenedor principal: controla cuántas plantas salen por fila */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Esto evita que se hagan gigantes */
+    gap: 30px;
+    padding: 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* La tarjeta completa */
+.planta {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column; /* Alinea contenido hacia abajo */
+    transition: transform 0.3s ease;
+    height: 100%; /* Todas del mismo alto */
+}
+
+.planta:hover {
+    transform: translateY(-10px);
+}
+
+/* LA IMAGEN: Aquí estaba el error, vamos a darle un tamaño fijo */
+.planta img {
+    width: 100%;
+    height: 250px; /* Tamaño ideal para que no ocupen toda la pantalla */
+    object-fit: cover; /* Recorta la imagen para que no se estire feo */
+}
+
+/* El texto debajo de la imagen */
+.planta-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.planta-info h3 {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.planta-info p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* El precio y botón */
+.precio {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+.btn-add {
+    width: 100%;
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-add:hover {
+    background: var(--primary);
+}
+
+.oculto {
+    display: none !important;
+}
+
+.titulo-categoria {
+    text-align: center;
+    color: var(--primary);
+    margin: 40px 0 20px;
+    font-size: 2rem;
+    border-bottom: 2px solid var(--secondary);
+    display: inline-block;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+/* El grid se mantiene igual para que las tarjetas se vean bien */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Ajustes para integrar con tu tipografía Poppins */
+.texto-nosotros h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: #2c3e50; /* Puedes cambiar esto al verde oscuro de tu marca */
+  margin-bottom: 20px;
+}
+
+.texto-nosotros p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.btn-saber-mas {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  /* El resto de los estilos del botón que ya tenías... */
+}
+
+.modal-overlay {
+    display: none; /* Se cambia a 'flex' con JS */
+    
+    /* ESTO ES LO MÁS IMPORTANTE PARA QUE NO MUEVA TU CATÁLOGO */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85); /* Fondo oscuro transparente */
+    
+    /* Esto lo pone por encima de todo */
+    z-index: 99999; 
+    
+    /* Esto centra la cajita blanca en medio de la pantalla */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Asegúrate de que la caja interna tenga un tamaño fijo */
+.modal-content {
+    background: #121212;
+    padding: 40px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 450px;
+    position: relative; /* Para que la X de cerrar se quede adentro */
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px;
+    background: #f5f5f5;
+    min-height: 70vh; /* Para que tenga buen tamaño vertical */
+}
+
+.hero-text {
+    max-width: 500px;
+}
+
+.hero-text h1 {
+    color: #2e7d32;
+    font-size: 40px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* --- Mejoras en el Login Box --- */
+.login-box {
+    background: #1c1c1c;
+    padding: 30px;
+    width: 350px;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.login-box h2 {
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+/* Estilo exacto para los inputs blancos */
+.login-box input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 8px; /* Bordes redondeados como en tu imagen */
+    font-size: 16px;
+    box-sizing: border-box; /* Importante para que no se salga del cuadro */
+}
+
+/* El botón rosa vibrante de tu captura */
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    background: #ff007f; /* El color rosa de la imagen */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-box button:hover {
+    background: #e60072;
+}
+
+/* Estilo para el link de registro de abajo */
+.login-box p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+.login-box a {
+    color: #ff007f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.mapa {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.mapa-container {
+    display: flex;
+    justify-content: center;
+}
+
+.mapa-container iframe {
+    width: 80%;
+    max-width: 800px;
+    height: 400px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.nosotros-container {
+    padding: 80px 10%; /* Mucho espacio arriba y a los lados */
+    background-color: #f9fbf9; /* Un verde casi blanco muy sutil */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nosotros-content {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap; /* Para que en celular se ponga uno abajo de otro */
+}
+
+.nosotros-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.subtitle {
+    color: #2e7d32; /* El verde de tu logo */
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+
+.nosotros-text h2 {
+    font-size: 2.5rem;
+    color: #1b2d1b;
+    margin: 10px 0 20px 0;
+}
+
+.nosotros-text p {
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #2e7d32;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #1b5e20;
+}
+
+.nosotros-map {
+    flex: 1;
+    min-width: 300px;
+}
+
+.map-wrapper {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Sombra suave para que resalte */
+    height: 350px;
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.captcha-code {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: 24px;
+  background: #e0e0e0;
+  padding: 10px;
+  letter-spacing: 5px;
+  text-decoration: line-through; /* Para hacerlo más "difícil" */
+  display: inline-block;
+  user-select: none; /* Evita que lo copien y peguen */
+}
+
+.resenas {
+    padding: 60px 20px;
+    background-color: #f9f9f9; /* Fondo gris muy claro para contrastar */
+    text-align: center;
+}
+
+.titulo-seccion {
+    color: #2d5a27; /* El verde oscuro que usas en el logo */
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.contenedor-resenas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tarjeta-resena {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-resena:hover {
+    transform: translateY(-5px);
+}
+
+.estrellas {
+    color: #f1c40f; /* Color dorado para las estrellas */
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.tarjeta-resena p {
+    font-style: italic;
+    color: #555;
+    line-height: 1.6;
+}
+
+.autor {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #2d5a27;
+}
+
+/* Fondo oscuro detrás del pop-up */
+.overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Caja del pop-up */
+.popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Botón de cerrar (X) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #888;
+}
+
+.close-btn:hover { color: #333; }
+
+/* Input y botón interno */
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.action-btn {
+    background-color: #2e7d32; /* Verde botánico */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.seccion-terminos {
+    display: flex;
+    align-items: flex-start; /* Alinea al inicio si el texto es largo */
+    text-align: left;
+    margin: 15px 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.seccion-terminos input[type="checkbox"] {
+    width: auto; /* IMPORTANTE: para que no ocupe el 100% del ancho */
+    margin-right: 10px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+.seccion-terminos a {
+    color: #ff004f; /* El rosa que usas en el botón */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.seccion-terminos a:hover {
+    text-decoration: underline;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    height: 400px; /* Ajusta la altura a tu gusto */
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carousel-slide {
+    display: flex;
+    width: 300%; /* 100% por cada imagen (si tienes 3) */
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto hace que la imagen no se deforme */
+}
+
+/* Botones de navegación */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.3);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.next { right: 15px; }
+.prev { left: 15px; }
+
+.prev:hover, .next:hover { background: #ff004f; }
